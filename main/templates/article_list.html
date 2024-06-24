@@ -1,0 +1,27 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans "Article List" %}</title>
+</head>
+<body>
+    <h1>{% trans "Articles" %}</h1>
+    <ul>
+    {% for article in articles %}
+        <li>{{ article.title }} - {{ article.content }}</li>
+    {% endfor %}
+    </ul>
+
+    <!-- Affichage des résultats augmentés -->
+    {% if augmented_results %}
+        <h2>{% trans "Augmented Results" %}</h2>
+        <ul>
+        {% for result in augmented_results %}
+            <li>{{ result }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="{% url 'set_language' %}?next={{ request.path }}">{% trans "Change Language" %}</a>
+</body>
+</html>

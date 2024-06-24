@@ -1,0 +1,18 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans "Chatbot" %}</title>
+</head>
+<body>
+    <h1>{% trans "Ask a question" %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="question" placeholder="{% trans "Enter your question" %}">
+        <button type="submit">{% trans "Submit" %}</button>
+    </form>
+    {% if answer %}
+        <h2>{% trans "Answer" %}: {{ answer }}</h2>
+    {% endif %}
+</body>
+</html>

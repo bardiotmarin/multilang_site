@@ -1,0 +1,27 @@
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media
+
+# Environment Variables #
+.env
+
+# macOS #
+.DS_Store
+
+# Windows #
+Thumbs.db
+ehthumbs.db
+
+# VS Code #
+.vscode/
+
+# Python #
+*.pyc
+__pycache__/
+
+# virtualenv #
+venv/
