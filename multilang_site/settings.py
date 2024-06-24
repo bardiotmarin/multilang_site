@@ -9,39 +9,34 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-import os  # Add this import statement
+import os
 from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 import environ
 
-# Initialise environ
-env = environ.Env(
-    # Définissez les valeurs par défaut et effectuez la conversion appropriée
-    DEBUG=(bool, False)
-)
-# Lire le fichier .env s'il existe
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-
-# Utilisation des variables d'environnement
-DEBUG = env('DEBUG')
-OPENAI_API_KEY = env('OPENAI_API_KEY')
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Initialise environ
+env = environ.Env(
+    # Set default values and casting
+    DEBUG=(bool, False)
+)
+# Read .env file if it exists
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+# Use environment variables
+DEBUG = env('DEBUG')
+SECRET_KEY = env('SECRET_KEY')
+OPENAI_API_KEY = env('OPENAI_API_KEY')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c@n#o#z-_v2=5)#c#m_kvhl&z^tbvv-bd6wv_#j%aquigo8icd'
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -86,7 +81,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'multilang_site.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -95,12 +89,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Multilang',
         'USER': 'postgres',
-        'PASSWORD': 'marin',
+        'PASSWORD': env('DB_PASSWORD', default='marin'),
         'HOST': 'localhost',
         'PORT': '5432', 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -119,7 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -140,7 +132,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
