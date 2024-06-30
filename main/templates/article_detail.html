@@ -1,0 +1,34 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% trans "Article Detail" %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>{% block heading %}{% trans "Article Detail" %}{% endblock %}</h1>
+            
+            <div class="article-detail">
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.content }}</p>
+                <p><small>{% trans "Published on" %}: {{ article.publication_date }}</small></p>
+                {% if article.stock_image_url %}
+                    <img src="{{ article.stock_image_url }}" alt="Stock Image">
+                {% endif %}
+            </div>
+            
+            <div class="article-actions">
+                <a href="{% url 'edit_article' pk=article.pk %}" class="action-link">{% trans "Edit" %}</a> /
+                <a href="{% url 'delete_article' pk=article.pk %}" class="action-link">{% trans "Delete" %}</a> /
+                <a href="{% url 'article_list' %}" class="button">{% trans 'Back to Articles' %}</a>
+
+                {% if next_article %}
+                    <a href="{% url 'article_detail' pk=next_article.pk %}" class="button">{% trans 'Next Article' %}</a>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

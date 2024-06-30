@@ -1,0 +1,36 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma page</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <form action="{% url 'set_language' %}" method="post" class="navbar-form">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                <select name="language" onchange="this.form.submit()">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                            {{ language.name_local }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+        <div class="navbar-right">
+            <a href="{% url 'home' %}">{% trans "Home" %}</a>
+            <a href="{% url 'chatbot_view' %}">{% trans "Chatbot" %}</a>
+            <a href="{% url 'rag_search' %}">{% trans "Google RAG Search" %}</a>
+        </div>
+    </nav>
+</body>
+</html>

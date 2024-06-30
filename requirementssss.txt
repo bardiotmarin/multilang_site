@@ -1,0 +1,10 @@
+Django==5.0.6
+django_environ==0.11.2
+requests==2.25.1
+django-text==1.7.6
+python-dotenv
+google-generativeai
+
+
+
+pip install transformers torch google-generativeai python-dotenv

@@ -1,0 +1,29 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversational Q&A Chatbot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/chatbot.js' %}"></script>  <!-- Incluez votre fichier JavaScript externe -->
+    <script>
+        var chatHistoryUrl = '{% url "get_chat_history" %}';
+        var chatbotUrl = '{% url "chatbot_view" %}';
+        var csrfToken = '{{ csrf_token }}';
+    </script>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>{% trans "Conversational Q&A Chatbot" %}</h1>
+        <div id="chat-box">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="{% trans 'Type your message here...' %}">
+            <button type="submit">{% trans 'Send' %}</button>
+        </form>
+    </div>
+</body>
+</html>

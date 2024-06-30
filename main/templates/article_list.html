@@ -1,27 +1,43 @@
 {% load i18n %}
+{% load static %}
 <!DOCTYPE html>
-<html>
-<head>
-    <title>{% trans "Article List" %}</title>
-</head>
-<body>
-    <h1>{% trans "Articles" %}</h1>
-    <ul>
-    {% for article in articles %}
-        <li>{{ article.title }} - {{ article.content }}</li>
-    {% endfor %}
-    </ul>
+    <html lang="{% get_current_language as LANGUAGE_CODE %}">
+        <head>
+            <meta charset="UTF-8">
+            <title>{% trans "Augmented Results" %}</title>
+            <link rel="stylesheet" type="text/css" href="{% static 'css/article_list.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/card.css' %}">
+            <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+        </head>
+        <body>    
+            {% include 'navbar.html' %}
+            <div class="container">
+                <h1>{% trans "List of all Articles" %}</h1>
+                
+                <!-- Début du Carousel -->
+                <div class="carousel" id="articleCarousel">
+                    {% for article in articles %}
+                    <div class="carousel-item">
+                        {% if article.stock_image_url %}
+                            <a href="{{ article.stock_image_url }}"><img src="{{ article.stock_image_url }}" alt="Stock Image" style="width: 300px; height: 300px;"></a>
+                        {% endif %}
+                        <h3>{{ article.title }}</h3>
+                        <p>{{ article.content | truncatewords:30 }}</p>
+                        <!-- Ajout du lien vers l'article complet -->
+                        <p><a href="{% url 'article_detail' article.id %}" class="btn">{% trans "Read more" %}</a></p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- Fin du Carousel -->
 
-    <!-- Affichage des résultats augmentés -->
-    {% if augmented_results %}
-        <h2>{% trans "Augmented Results" %}</h2>
-        <ul>
-        {% for result in augmented_results %}
-            <li>{{ result }}</li>
-        {% endfor %}
-        </ul>
-    {% endif %}
-
-    <a href="{% url 'set_language' %}?next={{ request.path }}">{% trans "Change Language" %}</a>
-</body>
-</html>
+                <!-- Contrôles du Carousel -->
+                <div class="carousel-controls">
+                    <button onclick="prevSlide()">Previous</button>
+                    <button onclick="nextSlide()">Next</button>
+                </div>
+            <p><a href="{% url 'home' %}" class="btn">{% trans "Back to home" %}</a></p>
+            </div>
+            {% include 'footer.html' %}
+            <script src="{% static 'js/articles_carousel.js' %}"></script>
+        </body>
+    </html>

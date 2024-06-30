@@ -1,0 +1,42 @@
+<!-- rag_search.html -->
+{% load i18n %}
+{% load static %}
+<html lang="{% get_current_language as LANGUAGE_CODE %}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/rag_search_google.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+{% block content %}
+
+{% include 'navbar.html' %}
+    <h2> {% trans "RAG Search Results" %}({% if request.LANGUAGE_CODE == 'fr' %}Francais{% else %}English{% endif %})</h2>
+
+    <div class="search-form">
+        <form method="get" action="{% url 'rag_search' %}">
+            <input type="text" name="query" class="search-input" placeholder="{% trans "Enter your search query" %}" value="{{ query }}">
+            <input type="hidden" name="language_code" value="{% if request.LANGUAGE_CODE %}{{ request.LANGUAGE_CODE }}{% else %}en{% endif %}">
+            <button type="submit" class="search-button">{% trans "Search" %}</button>
+        </form>
+    </div>
+
+    {% if query %}
+        {% if results %}
+            <h3>Results for "{{ query }}"</h3>
+            <ul>
+                {% for result in results %}
+                    <li><a href="{{ result.link }}" target="_blank">{{ result.title }}</a></li>
+                    <p>{{ result.snippet }}</p>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+    {% endif %}
+    <p><a href="{% url 'home' %}" class="button">{% trans "Back to home" %}</a></p>
+    {% include 'footer.html' %}
+{% endblock %}

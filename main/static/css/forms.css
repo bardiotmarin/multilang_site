@@ -1,0 +1,124 @@
+/* static/css/form.css */
+
+/* Style pour le conteneur parent */
+.container {
+    display: flex; /* Utilisation de flexbox pour le layout */
+    justify-content: space-between; /* Espacement équitable entre les deux enfants */
+    max-width: 1200px; /* Largeur maximale du conteneur parent */
+    margin: 50px auto; /* Centrer le conteneur parent avec un espace de 50px en haut */
+}
+
+/* Style pour le conteneur du formulaire */
+.form-container {
+    max-width: 600px;
+    margin: 50px auto; /* Centrer le formulaire avec un espace de 50px en haut */
+    padding: 20px;
+    background-color: #fff; /* Couleur de fond du formulaire */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Style pour le conteneur du chatbot */
+.container_chatbot {
+    flex: 1; /* Le chatbot prend autant d'espace que possible */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px; /* Espacement entre le formulaire et le chatbot */
+}
+
+/* Style pour les groupes de formulaire */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Style pour les labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold; /* Gras pour les labels */
+    color: #333; /* Couleur du texte */
+}
+
+/* Style pour les champs de formulaire */
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Style pour le bouton */
+button[type="submit"],
+button[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #45a049; /* Couleur de survol */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    button[type="submit"],
+    button[type="button"] {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        margin: 20px auto;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+        font-size: 11px;
+    }
+
+    button[type="submit"],
+    button[type="button"] {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Passage à une disposition en colonne sur les petits écrans */
+    }
+
+    .container_chatbot {
+        margin-top: 20px; /* Espacement entre le formulaire et le chatbot sur les petits écrans */
+        margin-left: 0; /* Aucun espacement à gauche sur les petits écrans */
+    }
+}

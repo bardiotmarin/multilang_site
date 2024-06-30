@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+</head>
+<body>
+    <footer class="footer">
+        <p>{% trans "© 2024 My Site. All rights reserved." %}</p>
+    </footer>
+</body>
+</html>

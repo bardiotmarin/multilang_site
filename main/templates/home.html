@@ -1,0 +1,59 @@
+{% load i18n %}
+{% load static %}
+
+<html lang="{% get_current_language as LANGUAGE_CODE %}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Augmented Results" %}</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home_card.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/search_bar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+{% block content %}
+    <!-- Section de la barre de navigation -->
+    {% include 'navbar.html' %}
+
+    <!-- Section de recherche d'articles -->
+    <section class="search-section">
+        <h2>{% trans "Rechercher des Articles" %}</h2>
+        <form method="get" action="{% url 'article_search' %}">
+            <div class="search-wrapper">
+                <input type="text" name="query" placeholder="{% trans "add your search" %}">
+                <button type="submit">
+                    {% trans "Search" %}
+                </button>
+            </div>
+        </form>
+    </section>
+    <a href="{% url 'add_article' %}" class="button">{% trans "Click for AI-generated articles!" %}</a>
+    <!-- Section des articles -->
+    <section class="article-section">
+        <h2>{% trans "Articles" %}</h2>
+        <div class="cards-container">
+            {% for article in articles %}
+            <div class="card">
+                <img src="{{ article.stock_image_url }}" alt="{{ article.title }}" class="card__image">
+                <div class="card__content">
+                    <time datetime="{{ article.publication_date }}" class="card__date">{{ article.publication_date }}</time>
+                    <h3 class="card__title">{{ article.title }}</h3>
+                    <p>{{ article.content | truncatewords:30 }}</p>
+                    <div class="card__actions">
+                        <a href="{% url 'edit_article' pk=article.pk %}" class="action-link">{% trans "Edit" %}</a>
+                        <a href="{% url 'delete_article' pk=article.pk %}" class="action-link">{% trans "Delete" %}</a>
+                        <a href="{% url 'article_detail' pk=article.pk %}" class="action-link">{% trans "See article" %}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    
+   
+    </section>
+
+    {% include 'footer.html' %}
+{% endblock %}
+</body>
+</html>

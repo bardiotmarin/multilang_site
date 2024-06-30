@@ -1,0 +1,60 @@
+.carousel-item {
+    position: relative;
+    display: inline-block;
+    width: calc(33% - 20px); /* Largeur ajustée pour 3 cartes par ligne avec marges */
+    margin: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.carousel-item p {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-title);
+    line-height: var(--line-height-title);
+    color: var(--color-text);
+    box-decoration-break: clone;
+    background-image: linear-gradient(90deg, var(--color-highlight-primary), var(--color-highlight-secondary));
+    background-size: 100% 42%;
+    background-repeat: no-repeat;
+    background-position: 0 85%;
+    padding: 0 4px;
+    margin-left: -4px;
+    
+}
+
+
+  
+.carousel-item:hover {
+    transform: translateY(-5px); /* Effet de levée */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Augmentation de l'ombre */
+    background-color: #f9f9f9; /* Changement de couleur de fond */
+}
+
+.carousel-item:hover img {
+    transform: scale(1.1); /* Agrandissement de l'image */
+}
+
+.carousel-item:hover h3,
+.carousel-item:hover p {
+    color: #007bff; /* Changement de couleur du texte */
+}

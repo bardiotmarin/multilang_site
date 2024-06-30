@@ -1,30 +1,153 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: VERSION DU PACKAGE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-24 00:51+0200\n"
+"POT-Creation-Date: 2024-06-30 02:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: NOM COMPLET <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: .\main\templates\article_list.html:5
-msgid "Article List"
-msgstr ""
 
-#: .\main\templates\article_list.html:8
+#: .\main\templates\add_edit_article.html:25
+msgid "Title"
+msgstr "Titre"
+
+#: .\main\templates\add_edit_article.html:29
+msgid "Content"
+msgstr "Contenu"
+
+#: .\main\templates\add_edit_article.html:33
+msgid "Unsplash Search Query"
+msgstr "Requête de recherche Unsplash"
+
+#: .\main\templates\add_edit_article.html:35
+msgid "Search Your Image Category"
+msgstr "Rechercher votre catégorie d'images"
+
+#: .\main\templates\add_edit_article.html:40
+msgid "Select an image"
+msgstr "Sélectionner une image"
+
+#: .\main\templates\add_edit_article.html:43
+msgid "Selected Image"
+msgstr "Image sélectionnée"
+
+#: .\main\templates\add_edit_article.html:47
+msgid "Save"
+msgstr "Enregistrer"
+
+#: .\main\templates\add_edit_article.html:52
+msgid "I'm here to help you with this article"
+msgstr "Je suis là pour vous aider avec cet article"
+
+#: .\main\templates\article_detail.html:7
+#: .\main\templates\article_detail.html:12
+#, fuzzy
+msgid "Article Detail"
+msgstr "Articles"
+
+#: .\main\templates\article_detail.html:17
+msgid "Published on"
+msgstr "Publié le"
+
+#: .\main\templates\article_detail.html:24 .\main\templates\home.html:45
+msgid "Edit"
+msgstr "Éditer"
+
+#: .\main\templates\article_detail.html:25 .\main\templates\home.html:46
+msgid "Delete"
+msgstr "Supprimer"
+
+#: .\main\templates\article_detail.html:26
+msgid "Back to Articles"
+msgstr "Retour aux articles"
+
+#: .\main\templates\article_detail.html:29
+#, fuzzy
+msgid "Next Article"
+msgstr "Articles"
+
+#: .\main\templates\article_list.html:7 .\main\templates\home.html:7
+msgid "Augmented Results"
+msgstr "Résultats augmentés"
+
+#: .\main\templates\article_list.html:15
+#, fuzzy
+msgid "List of all Articles"
+msgstr "Retour aux articles"
+
+#: .\main\templates\article_list.html:27
+msgid "Read more"
+msgstr "Lire la suite"
+
+#: .\main\templates\article_list.html:38 .\main\templates\rag_search.html:40
+msgid "Back to home"
+msgstr "Retour à l'accueil"
+
+#: .\main\templates\chatbot_component.html:19
+msgid "Conversational Q&A Chatbot"
+msgstr "Chatbot de questions-réponses conversationnel"
+
+#: .\main\templates\chatbot_component.html:24
+msgid "Type your message here..."
+msgstr "Tapez votre message ici..."
+
+#: .\main\templates\chatbot_component.html:25
+msgid "Send"
+msgstr "Envoyer"
+
+#: .\main\templates\footer.html:14
+msgid "© 2024 My Site. All rights reserved."
+msgstr "© 2024 Mon Site. Tous droits réservés."
+
+#: .\main\templates\home.html:22
+#, fuzzy
+msgid "Rechercher des Articles"
+msgstr "Rechercher des Articles"
+
+#: .\main\templates\home.html:25
+msgid "add your search"
+msgstr "ajoutez votre recherche"
+
+#: .\main\templates\home.html:27 .\main\templates\rag_search.html:23
+msgid "Search"
+msgstr "Rechercher"
+
+#: .\main\templates\home.html:32
+msgid "Click for AI-generated articles!"
+msgstr "Cliquez pour des articles générés par IA !"
+
+#: .\main\templates\home.html:35
 msgid "Articles"
 msgstr "Articles"
 
-#: .\main\templates\article_list.html:14
-msgid "Change Language"
-msgstr "Changer la langue"
+#: .\main\templates\home.html:47
+msgid "See article"
+msgstr "Voir l'article"
+
+#: .\main\templates\navbar.html:30
+msgid "Home"
+msgstr "Accueil"
+
+#: .\main\templates\navbar.html:31
+msgid "Chatbot"
+msgstr "Chatbot"
+
+#: .\main\templates\navbar.html:32
+#, fuzzy
+msgid "Google RAG Search"
+msgstr "Recherche RAG"
+
+#: .\main\templates\rag_search.html:17
+#, fuzzy
+msgid "RAG Search Results"
+msgstr "Recherche RAG"
+
+#: .\main\templates\rag_search.html:21
+#, fuzzy
+msgid "Enter your search query"
+msgstr "Entrez votre question"
