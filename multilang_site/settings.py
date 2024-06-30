@@ -25,7 +25,7 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 DEBUG = env('DEBUG', default=False)
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['multilang-site-zw8v.onrender.com'])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['multilang-site-nine.vercel.app'])
 # Application definition
 
 INSTALLED_APPS = [
@@ -144,7 +144,7 @@ if not DEBUG:
     # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-    
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
