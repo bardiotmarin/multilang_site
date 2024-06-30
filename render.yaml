@@ -1,7 +1,5 @@
-# render.yaml
-
 services:
-  - name: web
+  - type: web
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn multilang_site.wsgi --bind 0.0.0.0:8000
     env:
@@ -12,6 +10,4 @@ services:
       GOOGLE_API_KEY: ${GOOGLE_API_KEY}
       DATABASE_URL: ${DATABASE_URL}
       # Ajoutez d'autres variables d'environnement nécessaires ici
-
     healthCheckPath: "/"
-
