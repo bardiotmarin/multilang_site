@@ -1,0 +1,17 @@
+# render.yaml
+
+services:
+  - name: web
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn multilang_site.wsgi --bind 0.0.0.0:8000
+    env:
+      DJANGO_SETTINGS_MODULE: multilang_site.settings
+    envVars:
+      SECRET_KEY: ${SECRET_KEY}
+      SERPAPI_API_KEY: ${SERPAPI_API_KEY}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      DATABASE_URL: ${DATABASE_URL}
+      # Ajoutez d'autres variables d'environnement nécessaires ici
+
+    healthCheckPath: "/"
+
