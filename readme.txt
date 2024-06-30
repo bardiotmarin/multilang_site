@@ -27,6 +27,12 @@ SECRET_KEY="votre_secret_key_ici"
 pour que le code fonctionne il vous faut une clef api de chez : 
 
 
+SERPAPI_API
+GOOGLE_API
+UNSPLASH_ACCESS_KEY
+
+*** ne modifier pas la clef bdd ****
+
 Dans votre code Django, accédez à ces variables d'environnement ainsi :
 
 import os

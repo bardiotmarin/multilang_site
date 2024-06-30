@@ -18,7 +18,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # Use environment variables
 DEBUG = env('DEBUG')
 SECRET_KEY = env('SECRET_KEY')
-# OPENAI_API_KEY = env('OPENAI_API_KEY')
+
 SERPAPI_API_KEY = os.getenv('SERPAPI_API_KEY')
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 # Quick-start development settings - unsuitable for production
