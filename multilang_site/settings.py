@@ -23,9 +23,8 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-DEBUG=False
-ALLOWED_HOSTS=https://multilang-site-zw8v.onrender.com
-
+DEBUG = env('DEBUG', default=False)
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['multilang-site-zw8v.onrender.com'])
 # Application definition
 
 INSTALLED_APPS = [
