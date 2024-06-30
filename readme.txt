@@ -39,6 +39,8 @@ secret_key = os.getenv('SECRET_KEY')
  ------ Mise en Production ------
 Pour déployer l'application en production, vous pouvez utiliser des services comme Render.com ou tout autre service d'hébergement Django. Assurez-vous d'avoir configuré vos variables d'environnement sur le serveur de production pour la sécurité.
 
+Bien vérifier que vous etes
+
 Préparation du déploiement :
 python manage.py collectstatic
 
