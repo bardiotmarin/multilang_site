@@ -1,5 +1,6 @@
 services:
-  - name: web
+  - type: web
+    name: multilang_site
     env:
       - key: DJANGO_SETTINGS_MODULE
         value: "multilang_site.settings"
