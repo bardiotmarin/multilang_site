@@ -1,0 +1,132 @@
+:root {
+    --font-family-primary: 'Vollkorn', serif;
+    --font-family-secondary: 'PT Sans', sans-serif;
+    
+    --font-size-title: 24px;
+    --line-height-title: 1.4;
+    --font-size-caption: 14px;
+    --line-height-caption: 1.2;
+    
+    --color-text: #222022;
+    --color-highlight-primary: #FFEF7E;
+    --color-highlight-secondary: #B7F9E9;
+    --border-radius-primary: 16px; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family-secondary);
+    background-color: #f0f0f0;
+}
+
+
+
+.navbar form {
+    display: inline-flex;
+    align-items: center;
+}
+
+.navbar input[type="text"] {
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.navbar button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.navbar button:hover {
+    background-color: #45a049;
+}
+
+.article-section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.cards-container {
+    display: grid; /* Utiliser une grille pour les cartes */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colonnes adaptatives */
+    gap: 20px; /* Espacement entre les cartes */
+    justify-items: center; /* Centrer les cartes horizontalement */
+}
+
+.card {
+    width: 100%;
+    max-width: 600px;
+    border-radius: var(--border-radius-primary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 20px; /* Espacement entre les cartes */
+}
+
+
+.card:hover {
+    transform: translateY(-5px); /* Effet de levée */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Augmentation de l'ombre */
+    background-color: #f9f9f9; /* Changement de couleur de fond */
+}
+
+.card__image {
+    width: 100%;
+    height: 200px; /* Définir une hauteur fixe */
+    object-fit: cover;
+    border-radius: var(--border-radius-primary) var(--border-radius-primary) 0 0;
+}
+
+
+.card__content {
+    padding: 20px;
+}
+
+.card__date {
+    font-size: var(--font-size-caption);
+    color: var(--color-text);
+    margin-bottom: 6px;
+}
+
+.card__title {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-title);
+    line-height: var(--line-height-title);
+    color: var(--color-text);
+    box-decoration-break: clone;
+    background-image: linear-gradient(90deg, var(--color-highlight-primary), var(--color-highlight-secondary));
+    background-size: 100% 42%;
+    background-repeat: no-repeat;
+    background-position: 0 85%;
+    padding: 0 4px;
+    margin-left: -4px;
+}
+
+.card__actions {
+    margin-top: auto; /* Pour pousser les actions en bas de la carte */
+}
+
+.card__actions a {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.card__actions a:hover {
+    color: #0056b3;
+}

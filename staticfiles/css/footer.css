@@ -1,0 +1,29 @@
+.footer {
+    background-color: #1abc9c; /* Couleur de fond */
+    color: #ffffff; /* Couleur du texte */
+    padding: 20px; /* Espacement intérieur */
+    text-align: center; /* Centrer le texte */
+    font-size: 14px; /* Taille de police */
+    width: 100vw; /* Largeur pleine */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Ombre douce en bas */
+    clear: both; /* Assure le bon comportement d'affichage */
+}
+
+.footer p {
+    margin: 0; /* Supprimer les marges du paragraphe */
+}
+
+.footer p a {
+    color: #ffffff; /* Couleur du lien */
+    text-decoration: none; /* Supprimer le soulignement du lien */
+    transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+
+.footer p a:hover {
+    color: #2ecc71; /* Couleur du lien au survol */
+}
+
+/* Ajout d'espace en bas de la page */
+.page-content {
+    margin-bottom: 1rem; /* Ajuster selon la hauteur de votre footer */
+}

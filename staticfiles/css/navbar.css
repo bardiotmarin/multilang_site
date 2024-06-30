@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background: linear-gradient(to right, #ffffff, #f0f0f0); /* Example gradient colors */
+    width: 100vw; /* Ensure navbar spans the entire viewport width */
+    padding: 10px; /* Adjust padding as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust the gap between elements */
+}
+
+.navbar-left {
+    margin-right: auto; /* Pushes .navbar-left to the left */
+}
+
+.navbar-right {
+    margin-left: auto; /* Pushes .navbar-right to the right */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: rgb(0, 0, 0)6; /* Adjust text color */
+    padding: 10px; /* Add padding around links */
+}
+
+.navbar-form {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .navbar-left, .navbar-right {
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0; /* Add margin between sections */
+    }
+
+    .navbar a {
+        margin: 5px 0; /* Adjust margin for vertical layout */
+    }
+}
