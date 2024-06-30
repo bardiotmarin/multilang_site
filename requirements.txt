@@ -2,7 +2,7 @@ Django==5.0.6
 django_environ==0.11.2
 django-text==1.7.6
 google_search_results==2.4.2
-protobuf==4.21.5
+protobuf>=3.19.5
 python-dotenv==1.0.1
 Requests==2.32.3
 serpapi==0.1.5
