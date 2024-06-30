@@ -74,11 +74,11 @@ WSGI_APPLICATION = 'multilang_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Multilang',
-        'USER': 'postgres',
-        'PASSWORD': env('DB_PASSWORD', default='marin'),
-        'HOST': 'localhost',
-        'PORT': '5432', 
+        'NAME': 'multilang_dl4w',      # Nom de la base de données
+        'USER': 'marin',               # Nom d'utilisateur
+        'PASSWORD': '6nVuAfyTQrLLWq5lL0d8tRBDXB6vmtnf',  # Mot de passe
+        'HOST': 'dpg-cq0be6qju9rs73aqu9o0-a.oregon-postgres.render.com',  # Hôte de la base de données
+        'PORT': '5432',                # Port de la base de données
     }
 }
 
