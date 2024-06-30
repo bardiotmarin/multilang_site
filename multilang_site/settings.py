@@ -26,6 +26,7 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 DEBUG = env('DEBUG', default=False)
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['multilang-site-zw8v.onrender.com'])
+
 # Application definition
 
 INSTALLED_APPS = [
