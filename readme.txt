@@ -24,6 +24,7 @@ Configuration des Clés API dans l'Environnement
 Pour gérer les clés d'API de manière sécurisée, utilisez un fichier .env. Créez ce fichier à la racine du projet et ajoutez vos clés comme ceci :
 
 
+rennomer le ficher ENV.example en .env et repmplisez avec vos clef api
 # Exemple de clé d'API
 SECRET_KEY="votre_secret_key_ici"
 
