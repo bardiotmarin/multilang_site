@@ -7,3 +7,4 @@ python-dotenv==1.0.1
 Requests==2.32.3
 serpapi==0.1.5
 google-ai-generativelanguage==0.6.6
+psycopg2-binary==2.9.1
