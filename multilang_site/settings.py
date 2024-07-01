@@ -35,9 +35,6 @@ INSTALLED_APPS = [
 
 CORS_ALLOWED_ORIGINS = [
     'https://multilang-site-zw8v.onrender.com',
-    'https://multilang-site-zw8v.onrender.com/fr/',
-    'https://multilang-site-zw8v.onrender.com/fr/chatbot/',
-    
 ]
 
 MIDDLEWARE = [
