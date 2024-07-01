@@ -13,7 +13,8 @@ pip install requests
 python manage.py makemigrations  
 
  
-
+ 
+ 
 
 **Création de fichier de traduction**
 traduction : python manage.py makemessages -l fr
