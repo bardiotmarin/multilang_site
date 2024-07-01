@@ -22,8 +22,6 @@ python manage.py compilemessages
 
 
 
-traduction en manuel ou alors possibiliter de traduire en front end
-
 pip install serpapi
 pip install google-search-results
 

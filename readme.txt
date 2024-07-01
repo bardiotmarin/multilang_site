@@ -7,27 +7,30 @@ Pour télécharger le projet à partir de GitHub et l'installer localement, suiv
 Cloner le projet depuis GitHub :
 
 
-git clone <url_du_projet_git>
-cd project_name  # Remplacez project_name par le nom de votre projet
+git clone https://github.com/bardiotmarin/multilang_site.git
+
+
 Configuration de l'environnement virtuel :
-
-
-
 python -m venv env
 source env/bin/activate  # Sous Windows, utilisez env\Scripts\activate
+
+
 Installation des dépendances :
-
-
-
 pip install -r requirements.txt
 Configuration des Clés API dans l'Environnement
-Pour gérer les clés d'API de manière sécurisée, utilisez un fichier .env. Créez ce fichier à la racine du projet et ajoutez vos clés comme ceci :
+Pour gérer les clés d'API de manière sécurisée, rennomer le ficher ENV.example en .env et repmplisez avec vos clef api comme ceci :
 
-
-rennomer le ficher ENV.example en .env et repmplisez avec vos clef api
+ ------ clef api ------
 # Exemple de clé d'API
 SECRET_KEY="votre_secret_key_ici"
 
+pour que le code fonctionne il vous faut une clef api de chez : 
+
+
+SERPAPI_API
+GOOGLE_API
+UNSPLASH_ACCESS_KEY
+et l'url de votre bdd
 
 Dans votre code Django, accédez à ces variables d'environnement ainsi :
 
@@ -35,6 +38,8 @@ import os
 
 secret_key = os.getenv('SECRET_KEY')
 
+
+Installation des dépendances : demarage serv
 
  ------ Mise en Production ------
 Pour déployer l'application en production, vous pouvez utiliser des services comme Render.com ou tout autre service d'hébergement Django. Assurez-vous d'avoir configuré vos variables d'environnement sur le serveur de production pour la sécurité.
