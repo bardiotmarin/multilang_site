@@ -37,6 +37,10 @@ CORS_ALLOWED_ORIGINS = [
     'https://multilang-site-zw8v.onrender.com',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://multilang-site-zw8v.onrender.com',
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
